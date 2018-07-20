@@ -1,4 +1,4 @@
-此项目为ibatis2x的个人修改版本。
+此项目为ibatis2x的本人修改测试版本。
 项目原地址 https://github.com/mybatis/ibatis-2
 
 修改内容：
