@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright 2004-2017 the original author or authors.
+    Copyright 2004-2018 the original author or authors.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@
     <relativePath />
   </parent>
 
-  <groupId>org.mybatis</groupId>
-  <artifactId>mybatis2</artifactId>
-  <version>2.3.8-SNAPSHOT</version>
+  <groupId>com.ljw.ibatis</groupId>
+  <artifactId>ibatis2</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>mybatis2</name>
@@ -38,7 +38,7 @@
     annotations. Simplicity is the biggest advantage of the mybatis data mapper over object relational mapping
     tools.
   </description>
-  <url>http://www.mybatis.org/</url>
+  <url>https://github.com/liangjunweiGIT</url>
 
   <inceptionYear>2004</inceptionYear>
 
@@ -213,7 +213,7 @@
     </testResources>
   </build>
 
-  <reporting>
+  <!--<reporting>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -221,13 +221,13 @@
         <version>2.20.1</version>
       </plugin>
     </plugins>
-  </reporting>
+  </reporting>-->
 
   <profiles>
     <profile>
-      <id>jdk9</id>
+      <id>jdk8</id>
       <activation>
-        <jdk>9</jdk>
+        <jdk>8</jdk>
       </activation>
       <properties>
         <!-- Java 5 not supported on java 9 builds so bump to 6 -->
