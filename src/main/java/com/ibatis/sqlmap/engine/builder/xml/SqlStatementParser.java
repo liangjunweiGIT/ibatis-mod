@@ -15,6 +15,8 @@
  */
 package com.ibatis.sqlmap.engine.builder.xml;
 
+import com.ibatis.com.ljw.ibatis.common.statusparam.ResultClassVariable;
+import com.ibatis.com.ljw.test.pojo.User;
 import com.ibatis.common.xml.*;
 import com.ibatis.common.resources.*;
 import com.ibatis.sqlmap.engine.config.*;
@@ -63,6 +65,7 @@ public class SqlStatementParser {
     }
 
     String[] additionalResultClassNames = null;
+
     if (resultClassName != null) {
       additionalResultClassNames = state.getAllButFirstToken(resultClassName);
       resultClassName = state.getFirstToken(resultClassName);

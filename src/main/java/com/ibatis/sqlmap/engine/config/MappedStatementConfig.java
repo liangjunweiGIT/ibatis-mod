@@ -15,6 +15,7 @@
  */
 package com.ibatis.sqlmap.engine.config;
 
+import com.ibatis.com.ljw.ibatis.common.pojo.InitialResultClass;
 import com.ibatis.common.beans.*;
 import com.ibatis.common.resources.*;
 import com.ibatis.sqlmap.client.*;
@@ -47,6 +48,12 @@ public class MappedStatementConfig {
       Class resultClass, Class[] additionalResultClasses, String cacheModelName, String resultSetType,
       Integer fetchSize, boolean allowRemapping, Integer timeout, Integer defaultStatementTimeout,
       String xmlResultName) {
+
+    //TODO 如果不写resultClass则赋值一个初始值
+    if(resultClass==null){
+      resultClass = InitialResultClass.class;
+    }
+
     this.errorContext = config.getErrorContext();
     this.client = config.getClient();
     SqlMapExecutorDelegate delegate = client.getDelegate();
@@ -226,6 +233,7 @@ public class MappedStatementConfig {
     ResultMap resultMap;
     resultMap = new AutoResultMap(client.getDelegate(), allowRemapping);
     resultMap.setId(statement.getId() + "-AutoResultMap");
+    if(firstResultClass!=null)
     resultMap.setResultClass(firstResultClass);
     resultMap.setXmlName(xmlResultName);
     resultMap.setResource(statement.getResource());

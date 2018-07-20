@@ -429,6 +429,7 @@ public class DefaultSqlExecutor implements SqlExecutor {
     try {
       statementScope.setResultSet(rs);
       ResultMap resultMap = statementScope.getResultMap();
+
       if (resultMap != null) {
         // Skip Results
         if (rs.getType() != ResultSet.TYPE_FORWARD_ONLY) {
