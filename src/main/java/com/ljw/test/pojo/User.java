@@ -1,4 +1,4 @@
-package com.ibatis.com.ljw.test.pojo;
+package com.ljw.test.pojo;
 
 /**
  * @Description

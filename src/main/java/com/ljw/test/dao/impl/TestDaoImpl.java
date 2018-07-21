@@ -1,9 +1,8 @@
-package com.ibatis.com.ljw.test.dao.impl;
+package com.ljw.test.dao.impl;
 
-import com.ibatis.com.ljw.ibatis.common.daoImpl.IbatisDaoImpl;
-import com.ibatis.com.ljw.test.dao.TestDao;
-import com.ibatis.com.ljw.test.pojo.User;
-import com.ibatis.com.ljw.test.util.SqlUtil;
+import com.ljw.ibatis.common.daoImpl.IbatisDaoImpl;
+import com.ljw.test.dao.TestDao;
+import com.ljw.test.pojo.User;
 
 import java.util.List;
 

@@ -1,10 +1,12 @@
-package com.ibatis.com.ljw.test;
+package com.ljw.test;
 
-import com.ibatis.com.ljw.test.pojo.User;
+import com.ljw.test.pojo.User;
 
-import java.lang.reflect.*;
-
-import java.util.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Description

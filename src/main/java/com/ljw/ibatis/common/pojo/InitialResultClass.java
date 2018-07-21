@@ -1,4 +1,4 @@
-package com.ibatis.com.ljw.ibatis.common.pojo;
+package com.ljw.ibatis.common.pojo;
 
 /**
  * @Description 做resultClass的初始值

@@ -1,9 +1,9 @@
-package com.ibatis.com.ljw.ibatis.common.daoImpl;
+package com.ljw.ibatis.common.daoImpl;
 
-import com.ibatis.com.ljw.ibatis.common.statusparam.ResultClassVariable;
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
+import com.ljw.ibatis.common.statusparam.ResultClassVariable;
 
 import java.io.IOException;
 import java.io.Reader;

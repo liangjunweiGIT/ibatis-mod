@@ -15,18 +15,20 @@
  */
 package com.ibatis.sqlmap.engine.impl;
 
-import com.ibatis.com.ljw.ibatis.common.pojo.InitialResultClass;
-import com.ibatis.com.ljw.ibatis.common.statusparam.ResultClassVariable;
-import com.ibatis.common.util.PaginatedList;
 import com.ibatis.common.logging.Log;
 import com.ibatis.common.logging.LogFactory;
-import com.ibatis.sqlmap.client.*;
+import com.ibatis.common.util.PaginatedList;
+import com.ibatis.sqlmap.client.SqlMapClient;
+import com.ibatis.sqlmap.client.SqlMapException;
+import com.ibatis.sqlmap.client.SqlMapSession;
 import com.ibatis.sqlmap.client.event.RowHandler;
 import com.ibatis.sqlmap.engine.execution.BatchException;
 import com.ibatis.sqlmap.engine.execution.SqlExecutor;
 import com.ibatis.sqlmap.engine.mapping.result.ResultMap;
 import com.ibatis.sqlmap.engine.mapping.result.ResultObjectFactory;
 import com.ibatis.sqlmap.engine.mapping.statement.MappedStatement;
+import com.ljw.ibatis.common.pojo.InitialResultClass;
+import com.ljw.ibatis.common.statusparam.ResultClassVariable;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

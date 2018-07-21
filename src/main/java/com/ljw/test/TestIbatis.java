@@ -1,13 +1,9 @@
-package com.ibatis.com.ljw.test;
+package com.ljw.test;
 
-import com.ibatis.com.ljw.test.dao.TestDao;
-import com.ibatis.com.ljw.test.dao.impl.TestDaoImpl;
-import com.ibatis.com.ljw.test.pojo.User;
-import com.ibatis.common.resources.Resources;
-import com.ibatis.sqlmap.client.SqlMapClient;
-import com.ibatis.sqlmap.client.SqlMapClientBuilder;
+import com.ljw.test.dao.TestDao;
+import com.ljw.test.dao.impl.TestDaoImpl;
+import com.ljw.test.pojo.User;
 
-import java.io.Reader;
 import java.util.List;
 
 /**

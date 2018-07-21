@@ -1,4 +1,4 @@
-package com.ibatis.com.ljw.ibatis.common.statusparam;
+package com.ljw.ibatis.common.statusparam;
 
 /**
  * @Description

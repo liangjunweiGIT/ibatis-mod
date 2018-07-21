@@ -15,7 +15,6 @@
  */
 package com.ibatis.sqlmap.engine.config;
 
-import com.ibatis.com.ljw.ibatis.common.pojo.InitialResultClass;
 import com.ibatis.common.beans.*;
 import com.ibatis.common.resources.*;
 import com.ibatis.sqlmap.client.*;
@@ -30,6 +29,7 @@ import com.ibatis.sqlmap.engine.mapping.sql.stat.*;
 import com.ibatis.sqlmap.engine.mapping.statement.*;
 import com.ibatis.sqlmap.engine.scope.*;
 import com.ibatis.sqlmap.engine.type.*;
+import com.ljw.ibatis.common.pojo.InitialResultClass;
 
 import java.sql.ResultSet;
 import java.util.*;

@@ -1,6 +1,6 @@
-package com.ibatis.com.ljw.test.dao;
+package com.ljw.test.dao;
 
-import com.ibatis.com.ljw.test.pojo.User;
+import com.ljw.test.pojo.User;
 
 import java.util.List;
 
