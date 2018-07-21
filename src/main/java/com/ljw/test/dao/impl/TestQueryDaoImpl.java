@@ -20,4 +20,8 @@ public class TestQueryDaoImpl extends IbatisQueryDaoImpl implements TestDao {
     public User queryUserById(Long id) {
         return (User) queryForObject("getUserById",id);
     }
+
+    public void testVoid() {
+        queryForObject("getUserById",1);
+    }
 }

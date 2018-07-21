@@ -13,7 +13,7 @@ import java.util.List;
 public class TestIbatis {
     public static void main(String arg[]) throws Exception {
         TestDao testDao = new TestQueryDaoImpl();
-        User query = new User();
+        /*User query = new User();
         List<User> list = testDao.queryUserList(query);
         System.out.println("----queryUserList-------");
         System.out.println("Selected " + list.size() + " records.");
@@ -23,7 +23,8 @@ public class TestIbatis {
 
         User user = testDao.queryUserById(1L);
         System.out.println("----queryUserById-------");
-        System.out.println(user);
+        System.out.println(user);*/
 
+        testDao.testVoid();
     }
 }

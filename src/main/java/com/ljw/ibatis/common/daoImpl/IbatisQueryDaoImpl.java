@@ -7,6 +7,8 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.ibatis.sqlmap.engine.impl.SqlMapClientImpl;
 import com.ibatis.sqlmap.engine.mapping.result.ResultMap;
 import com.ljw.ibatis.common.pojo.InitialResultClass;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -21,6 +23,8 @@ import java.util.List;
  * @Author Create by junwei.liang on 2018/7/20
  */
 public class IbatisQueryDaoImpl {
+    private static final Logger LOGGER = LogManager.getLogger(IbatisQueryDaoImpl.class.getName());
+
     private static SqlMapClientImpl sqlMapClient;
 
     static {
@@ -159,6 +163,10 @@ public class IbatisQueryDaoImpl {
                     }
                 }
 
+                if(method.getReturnType().equals(void.class)){
+                    LOGGER.error("请在sql.xml中添加设置正确的resultClass，或者将方法返回值类型设置为结果类型");
+                    return Object.class;
+                }
                 return method.getReturnType();
             }
         }

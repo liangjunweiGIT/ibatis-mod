@@ -12,4 +12,6 @@ public interface TestDao {
     List<User> queryUserList(User query);
 
     User queryUserById(Long id);
+
+    void testVoid();
 }
