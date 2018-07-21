@@ -144,7 +144,7 @@ public class IbatisQueryDaoImpl {
         tag = log.getClassName() + "." + log.getMethodName();
 
         // return class and super class methods
-        Method[] methods = this.getClass().getMethods();
+        Method[] methods = this.getClass().getDeclaredMethods();
         for (Method method : methods) {
             if(method.toString().contains(tag)){
                 Type type = method.getGenericReturnType();// 获取返回值类型
@@ -153,18 +153,15 @@ public class IbatisQueryDaoImpl {
                     // getActualTypeArguments()方法获取类型中的实际类型，如map<String,Integer>中的
                     // 在Dao中泛型不应该使用是多个，所以不使用数组
                     try {
-                        //ResultClassVariable.setResultClass(Class.forName(types[0].toString().replace("class ","")));
                         return Class.forName(types[0].toString().replace("class ",""));
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
                     }
                 }
 
-                //ResultClassVariable.setResultClass(method.getReturnType());
                 return method.getReturnType();
             }
         }
-        //ResultClassVariable.setResultClass(null);
         return null;
     }
 }
