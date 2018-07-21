@@ -5,10 +5,8 @@ import com.ibatis.common.util.PaginatedList;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.ibatis.sqlmap.engine.impl.SqlMapClientImpl;
-import com.ibatis.sqlmap.engine.impl.SqlMapExecutorDelegate;
 import com.ibatis.sqlmap.engine.mapping.result.ResultMap;
 import com.ljw.ibatis.common.pojo.InitialResultClass;
-import com.ljw.ibatis.common.statusparam.ResultClassVariable;
 
 import java.io.IOException;
 import java.io.Reader;
