@@ -1,7 +1,7 @@
 package com.ljw.test;
 
 import com.ljw.test.dao.TestDao;
-import com.ljw.test.dao.impl.TestDaoImpl;
+import com.ljw.test.dao.impl.TestQueryDaoImpl;
 import com.ljw.test.pojo.User;
 
 import java.util.List;
@@ -12,17 +12,18 @@ import java.util.List;
  */
 public class TestIbatis {
     public static void main(String arg[]) throws Exception {
-        TestDao testDao = new TestDaoImpl();
+        TestDao testDao = new TestQueryDaoImpl();
         User query = new User();
         List<User> list = testDao.queryUserList(query);
+        System.out.println("----queryUserList-------");
         System.out.println("Selected " + list.size() + " records.");
         for (User user : list) {
             System.out.println(user);
         }
-        /*List<User> list2 = testDao.queryUserList(query);
-        System.out.println("Selected " + list2.size() + " records.");
-        for (User user : list2) {
-            System.out.println(user);
-        }*/
+
+        User user = testDao.queryUserById(1L);
+        System.out.println("----queryUserById-------");
+        System.out.println(user);
+
     }
 }

@@ -24,11 +24,8 @@ import com.ibatis.sqlmap.client.SqlMapSession;
 import com.ibatis.sqlmap.client.event.RowHandler;
 import com.ibatis.sqlmap.engine.execution.BatchException;
 import com.ibatis.sqlmap.engine.execution.SqlExecutor;
-import com.ibatis.sqlmap.engine.mapping.result.ResultMap;
 import com.ibatis.sqlmap.engine.mapping.result.ResultObjectFactory;
 import com.ibatis.sqlmap.engine.mapping.statement.MappedStatement;
-import com.ljw.ibatis.common.pojo.InitialResultClass;
-import com.ljw.ibatis.common.statusparam.ResultClassVariable;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -97,11 +94,6 @@ public class SqlMapClientImpl implements SqlMapClient, ExtendedSqlMapClient {
     }
 
     public List queryForList(String id, Object paramObject) throws SQLException {
-        //TODO ljw 如果resultClass还是初始值则使用反射得到的类型给resultClass赋值
-        ResultMap resultMap = this.delegate.getMappedStatement(id).getResultMap();
-        if (InitialResultClass.class.equals(resultMap.getResultClass())) {
-            resultMap.setResultClass(ResultClassVariable.getResultClass());
-        }
         return getLocalSqlMapSession().queryForList(id, paramObject);
     }
 

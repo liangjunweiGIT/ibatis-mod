@@ -8,4 +8,9 @@
             WHERE GROUPNAME = #groupName#
         </isNotEmpty>
     </select>
+
+    <select id="getUserById">
+        SELECT * FROM USER_ACCOUNT
+        WHERE id=#id#
+    </select>
 </sqlMap>
