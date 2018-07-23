@@ -15,15 +15,15 @@
  */
 package com.ibatis.sqlmap.engine.builder.xml;
 
-import com.ibatis.com.ljw.ibatis.common.statusparam.ResultClassVariable;
-import com.ibatis.com.ljw.test.pojo.User;
-import com.ibatis.common.xml.*;
-import com.ibatis.common.resources.*;
-import com.ibatis.sqlmap.engine.config.*;
-import com.ibatis.sqlmap.engine.mapping.statement.*;
-import com.ibatis.sqlmap.client.*;
+import com.ibatis.common.resources.Resources;
+import com.ibatis.common.xml.NodeletUtils;
+import com.ibatis.sqlmap.client.SqlMapException;
+import com.ibatis.sqlmap.engine.config.MappedStatementConfig;
+import com.ibatis.sqlmap.engine.mapping.statement.MappedStatement;
+import com.ljw.ibatis.common.exception.SqlXmlRuntimeException;
 import org.w3c.dom.CharacterData;
-import org.w3c.dom.*;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import java.util.Properties;
 
@@ -35,7 +35,7 @@ public class SqlStatementParser {
     this.state = config;
   }
 
-  public void parseGeneralStatement(Node node, MappedStatement statement) {
+  public void parseGeneralStatement(Node node, MappedStatement statement) throws SqlXmlRuntimeException{
 
     // get attributes
     Properties attributes = NodeletUtils.parseAttributes(node, state.getGlobalProps());
@@ -50,6 +50,11 @@ public class SqlStatementParser {
     String fetchSize = attributes.getProperty("fetchSize");
     String allowRemapping = attributes.getProperty("remapResults");
     String timeout = attributes.getProperty("timeout");
+
+    //TODO 添加编译时检查：如果时select则resultMap和esultClass不能同时为空 如果不需要检查去掉下面的if即可
+    if("select".equals(node.getNodeName())&&resultMapName==null&&resultClassName==null){
+      throw new SqlXmlRuntimeException("SqlId = '"+ id +"', select statement must set up resultMap or resutltClass");
+    }
 
     if (state.isUseStatementNamespaces()) {
       id = state.applyNamespace(id);
